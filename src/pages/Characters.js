@@ -97,7 +97,7 @@ const Characters = () => {
                         </DetailsContent>
                     </CharacterDetails>
                 )}
-            </Container>
+            </Container>    
         </div>
     );
 };
