@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin-left: 700px;
+    margin-right: 700px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    margin-top: 200px;
+    padding: 80px;
+    border-radius: 20px;
+}
+
+.title {
+    font-size: 35px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.input {
+    width: 300px;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #e0f7fa;
+    font-size: 20px;
+}
+
+.button {
+    width: 80%;
+    padding: 15px;
+    margin: 20px;
+    border: none;
+    border-radius: 70px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.line {
+    color: black;
+    width: 400px;
+    margin-top: 22px;
+}
