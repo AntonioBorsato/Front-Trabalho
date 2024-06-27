@@ -1,31 +1,22 @@
-//importação arquivos do projeto
-import Form from "./pages/Form";
-import "./App.css";
-//importação Npm Install
-import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Form from './pages/Form';
+import Characters from './pages/Characters';
+import CharacterDetails from './pages/CharactersDetails';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Characters from "./pages/Characters";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Form />
-  },
-  {
-    path: "/Characters",
-    element: <Characters />
-  },
-]);
 
 function App() {
-
-  return (
-    <>
-      <RouterProvider router={router} />,
-      <ToastContainer />
-    </>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Form />} />
+                <Route path="/Characters" element={<Characters />} />
+                <Route path="/CharacterDetails/:id" element={<CharacterDetails />} />
+            </Routes>
+            <ToastContainer />
+        </Router>
+    );
 }
 
 export default App;
