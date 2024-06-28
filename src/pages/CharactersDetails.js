@@ -55,9 +55,6 @@ const CharacterDetails = () => {
                     ))}
                 </EpisodeList>
                 <CharacterInfo>Data de criação: {new Date(character.created).toLocaleDateString()}</CharacterInfo>
-                {character.type && (
-                    <CharacterInfo>Tipo de dimensão: {character.type}</CharacterInfo>
-                )}
             </CharacterCard>
         </Container>
     );
