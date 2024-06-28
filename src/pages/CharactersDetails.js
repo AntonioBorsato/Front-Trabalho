@@ -43,11 +43,21 @@ const CharacterDetails = () => {
                 <CharacterInfo>Gênero: {character.gender}</CharacterInfo>
                 <CharacterInfo>Origem: {character.origin.name}</CharacterInfo>
                 <CharacterInfo>Localização: {character.location.name}</CharacterInfo>
-                <CharacterInfo>Episódios: {character.episode.length}</CharacterInfo>
+                <CharacterInfo>Episódios:</CharacterInfo>
+                <EpisodeList>
+                    {character.episode.map((episodeUrl, index) => (
+                        <Episode key={index}>
+                            <EpisodeTitle>Episódio {index + 1}</EpisodeTitle>
+                            <EpisodeDetails>
+                                <EpisodeInfo>URL: {episodeUrl}</EpisodeInfo>
+                            </EpisodeDetails>
+                        </Episode>
+                    ))}
+                </EpisodeList>
                 <CharacterInfo>Data de criação: {new Date(character.created).toLocaleDateString()}</CharacterInfo>
-                <CharacterInfo>Última vez visto em: {character.episode[character.episode.length - 1]}</CharacterInfo>
-                <CharacterInfo>Tipo de dimensão: {character.type}</CharacterInfo>
-                <CharacterInfo>Status: {character.status}</CharacterInfo>
+                {character.type && (
+                    <CharacterInfo>Tipo de dimensão: {character.type}</CharacterInfo>
+                )}
             </CharacterCard>
         </Container>
     );
@@ -98,6 +108,31 @@ const CharacterInfo = styled.p`
     font-size: 1.2em;
     color: #34495e;
     margin: 5px 0;
+`;
+
+const EpisodeList = styled.div`
+    margin-top: 10px;
+`;
+
+const Episode = styled.div`
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+`;
+
+const EpisodeTitle = styled.h3`
+    font-size: 1.2em;
+    color: #2c3e50;
+    margin-bottom: 5px;
+`;
+
+const EpisodeDetails = styled.div`
+    margin-left: 20px;
+`;
+
+const EpisodeInfo = styled.p`
+    font-size: 1em;
+    color: #34495e;
+    margin: 3px 0;
 `;
 
 const Loading = styled.div`
